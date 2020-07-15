@@ -191,8 +191,8 @@ def comprension_listas():
     # de "numeros"
     numeros = [1, -5, -6, 4]
     numeros_cmp = [2*x for x in numeros]
-    print(numeros)
-    # numeros_cmp= [2, -10, 12, 8]
+    print(numeros_cmp)
+    # numeros_cmp= [2, -10, -12, 8]
 
     print('Generador de listas')
     # Generar una nueva lista utilizando los datos
@@ -331,12 +331,12 @@ if __name__ == '__main__':
     # ----------------------------
     # Uso de Numpy vs bucles vs listas
     # queda para que el alumno chusmee
-    metodos_numpy_vs_list()
-    numpy_where_diff()
+    #metodos_numpy_vs_list()
+    #numpy_where_diff()
     # ----------------------------
-    expresion_map_lambda()
+    #expresion_map_lambda()
     lambda_vs_bucle()
-    comprension_listas()
-    comprension_listas_vs_bucle()
+    #comprension_listas()
+    #comprension_listas_vs_bucle()
     # Bonus Track - comprension listas + diccionarios
-    comprension_dataset()
+    #comprension_dataset()

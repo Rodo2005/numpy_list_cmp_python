@@ -16,11 +16,10 @@ __email__ = "alumnos@inove.com.ar"
 __version__ = "1.1"
 
 import numpy as np
-
+from numpy import random
 
 def ej1():
-    print('Comenzamos a divertirnos!')
-
+    
     '''
     Empecemos a jugar con las listas y su métodos, el objetivo
     es realizar el código lo más simple, ordenado y limpio posible,
@@ -31,6 +30,7 @@ def ej1():
        que estén comprendidos entre 1 y 10 inclusive
        (NOTA: utilizar comprension de listas a pesar de poder hacerlo
         con un método de la librería random)
+        
     2) Luego de generar la lista sumar los números y ver si el resultado
        de la suma es menor o igual a 21
        a) Si el número es menor o igual a 21 se imprime en pantalla
@@ -41,6 +41,17 @@ def ej1():
 
     Realizar este proceso iterativo hasta cumplir el objetivo
     '''
+    
+    numeros = []
+    print('Comenzamos a divertirnos!')
+    for k in range(100):
+        numeros = [random.randint(1, 10) for x in range(3)]
+        suma = sum(numeros)
+        if suma <= 21:
+            print(suma, '\n', numeros)
+            break
+
+    
 
 
 def ej2():
@@ -63,6 +74,12 @@ def ej2():
 
     # Se espera obtener:
     # ['Tamara', 'Juan', 'Alberto'......]
+    nombres_filtrados = []
+    for l in padron:
+        nombres_filtrados_l = [x for x in nombres if x[0] == l]
+        for i in nombres_filtrados_l:
+            nombres_filtrados.append(i)
+    print(nombres_filtrados)
 
 
 def ej3():
@@ -90,6 +107,8 @@ def ej3():
     # de someter cada valor de "X" a la función math.sin
 
     # y_list =
+    y_list = np.sin(x)
+    print(y_list)
 
     # Este es un ejemplo práctico de cuando es útil usar numpy,
     # basicamente siempre que deseen utilizar una función matemática
@@ -124,6 +143,11 @@ def ej4():
     # de diccionarios que tiene un parametro configurable respecto
     # que sucede sino encuentra la "key" en el diccionario.
 
+    lista_compra_nombre = []
+    for i in lista_compra_id:
+        lista = producto.get(i,'NaN')
+        lista_compra_nombre.append(lista)
+    print(lista_compra_nombre)
 
 def ej5():
     print("Ahora sí! buena suerte :)")
@@ -147,12 +171,34 @@ def ej5():
     dos jugadores y compitan para ver quien sacá la suma de números
     más cercanos a 21 sin pasarse!
     '''
+    print('\n')
+    lista = [random.randint(1,10) for x in range(2)]
+    suma = sum(lista)
+    print('Su jugada es....\n')
+    print(lista, 'y sus cartas suman:', suma)
+    while suma < 21:
+        print('Desea sacar otro numero?\n')
+        x = str(input('"s" para si, si no "n" si no desea mas numeros\n'))
+        if x == 's':
+            numero = [random.randint(1, 10)]
+            lista.append(numero[0])
+            suma = sum(lista)
+            print(lista, 'Suma:', suma)
+        elif x == 'n':
+            print('Su jugada es:', lista, 'y sus cartas suman:', suma)
+            break
+        elif x != 's' and x != 'n':
+            print('Ingrese una opcion valida')
+    print('Finalizo la partida')
+    print('Su jugada final es:', lista, 'y sus cartas suman:', suma)
+    if suma > 21:
+        print('Perdio la partida!!!')
 
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
-    # ej1()
-    # ej2()
-    # ej3()
-    # ej4()
-    # ej5()
+    #ej1()
+    #ej2()
+    #ej3()
+    #ej4()
+    ej5()
