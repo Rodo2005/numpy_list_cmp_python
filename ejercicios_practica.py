@@ -80,6 +80,9 @@ def ej2():
         for i in nombres_filtrados_l:
             nombres_filtrados.append(i)
     print(nombres_filtrados)
+    #inovetip: El código resuelve el enunciado pero no aprovecha la
+    #compresión de listas. En el apunte vas a ver un ejemplo de "filtro"
+    #útil para estos casos
 
 
 def ej3():
@@ -107,8 +110,10 @@ def ej3():
     # de someter cada valor de "X" a la función math.sin
 
     # y_list =
-    y_list = np.sin(x)
+    y_list = np.sin(x) #Inovetip: este es el resultado de y_nump :D
     print(y_list)
+    # Inovetip:la idea es que utilices las dos funciones "np.sin" y math.sin
+    #para obtener el mismo resultado, y comparar el código
 
     # Este es un ejemplo práctico de cuando es útil usar numpy,
     # basicamente siempre que deseen utilizar una función matemática
@@ -148,6 +153,8 @@ def ej4():
         lista = producto.get(i,'NaN')
         lista_compra_nombre.append(lista)
     print(lista_compra_nombre)
+    # Inovetip: tenes que lograr lo mismo pero utilizando 
+    # compresión de listas :D
 
 def ej5():
     print("Ahora sí! buena suerte :)")
