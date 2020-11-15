@@ -172,28 +172,49 @@ def ej5():
     más cercanos a 21 sin pasarse!
     '''
     print('\n')
-    lista = [random.randint(1,10) for x in range(2)]
-    suma = sum(lista)
-    print('Su jugada es....\n')
-    print(lista, 'y sus cartas suman:', suma)
-    while suma < 21:
-        print('Desea sacar otro numero?\n')
-        x = str(input('"s" para si, si no "n" si no desea mas numeros\n'))
+    lista_a = [random.randint(1,10) for x in range(2)]
+    lista_b = [random.randint(1,10) for x in range(2)]
+    suma_a = sum(lista_a)
+    suma_b = sum(lista_b)
+    print('Jugador "A" sus cartas son:', lista_a, 'y suman:', suma_a)
+    print('Jugador "B" sus cartas son:', lista_b, 'y suman:', suma_b)
+    while suma_a < 21:
+        print('Sus cartas', lista_a, 'suman:', suma_a)
+        print('Jugagor "A" desea sacar otra carta?\n')
+        x = str(input('Si desea otra carta "s", si no desea mas cartas "n" \n'))
         if x == 's':
             numero = [random.randint(1, 10)]
-            lista.append(numero[0])
-            suma = sum(lista)
-            print(lista, 'Suma:', suma)
+            lista_a.append(numero[0])
+            suma_a = sum(lista_a)
+            print('Sus cartas son', lista_a, 'y suman:', suma_a)
         elif x == 'n':
-            print('Su jugada es:', lista, 'y sus cartas suman:', suma)
+            print('Sus cartas son:', lista_a, 'y suman:', suma_a)
             break
         elif x != 's' and x != 'n':
             print('Ingrese una opcion valida')
-    print('Finalizo la partida')
-    print('Su jugada final es:', lista, 'y sus cartas suman:', suma)
-    if suma > 21:
-        print('Perdio la partida!!!')
 
+    while suma_b < 21:
+        print('Sus cartas', lista_b, 'Suman:', suma_b)
+        print('Jugador"B" desea sacar otra carta?\n')
+        x = str(input('Si desea otra carta "s", si no desea mas cartas "n" \n'))
+        if x == 's':
+            numero = [random.randint(1, 10)]
+            lista_b.append(numero[0])
+            suma_b = sum(lista_b)
+            print('Sus cartas son', lista_b, 'y suman:', suma_b)
+        elif x == 'n':
+            print('Sus cartas son:', lista_b, 'y suman:', suma_b)
+            break
+        elif x != 's' and x != 'n':
+            print('Ingrese una opcion valida')
+
+    if suma_a > suma_b and suma_a <= 21:
+        print('Jugador "A" con', suma_a, 'puntos gano la partida')
+    elif suma_a < suma_b and suma_b <= 21:
+        print('Jugador "B" con', suma_b, 'puntos gano la partida')
+    elif suma_a > 21 and suma_b > 21:
+        print('Ambos jugadores perdieron la partida')
+    print('Finalizo la partida')
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
