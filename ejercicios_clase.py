@@ -207,6 +207,10 @@ def ej6():
     # (condicion, verdadero, falso)!!!
     nuevo_array = np.where(v % 5, 0, v)
     print(nuevo_array)
+    # Inovetip: Fijate en el foro del campus como resolvimos este tema, está bien explicado!
+    # Si lo queres usar así, tenes que dar vuelta los resultados verdadero y falso, sino
+    # tenes que utilizarlo así: np.where((v % 5) == 0 , 0, v)
+    
     pass
 
 
